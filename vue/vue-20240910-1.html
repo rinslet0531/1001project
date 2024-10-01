@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue.js 語法練習</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/myall.css">
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="h1">{{ text01 }}</div>
+        <div v-html="text_html"></div>
+        <div>{{ img_html }}</div>
+        <div v-html="img_html"></div>
+    </div>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const App = {
+            data() {
+                return{
+                    text01: 'hello world',
+                    text_html: '<h3>這是一段html語法</h3>',
+                    img_html: '<img src="../image/06-stroy.jpg" class="img-fluid" alt="">'
+                }
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21世紀速食館 - 形象官網</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <style>
+        .s14_img {
+            background-image: url(image/分店.png);
+            height: 33vh;
+        }
+
+        .s05_1 {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+
+        .box01_roller {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roller01 {
+            position: absolute;
+            top: 0%;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(180deg, rgba(161, 196, 253, 0.5), rgba(194, 233, 251, 0.7));
+        }
+
+        .box01_roller:hover .roller01 {
+            right: -85%;
+            transition: right 0.8s;
+        }
+
+        .timeline-section {
+            position: relative;
+        }
+
+        .timeline-section::before {
+            position: absolute;
+            content: "";
+            top: 0px;
+            bottom: 0px;
+            width: 10px;
+            background-color: var(--mycolor07);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-section-pointer {
+            position: relative;
+        }
+
+        .timeline-section-pointer::before {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-color: aliceblue;
+            border: 3px solid var(--mycolor06);
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0px;
+        }
+
+        .timeline-section-pointer:hover::before {
+            width: 25px;
+            height: 25px;
+            border: 5px solid var(--mycolor06);
+            top: 25%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline-section::before {
+                /* display: none; */
+                left: -15px;
+            }
+
+            .timeline-section-pointer::before {
+                /* display: none; */
+                left: -3px
+            }
+
+            .s07_text,
+            .s09_text,
+            .s11_text {
+                z-index: 10;
+                background-color: rgba(0, 0, 0, 0.3);
+                color: white;
+                padding: 15px;
+            }
+
+            .s07_img,
+            .s09_img {
+                margin: 0px;
+            }
+
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- loginModal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-bg-warning">
+                    <h1 class="modal-title fs-5 fw-900 text-white" id="exampleModalLabel">會員登入</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="loginModal_username" class="form-label">帳號</label>
+                        <input type="text" name="loginModal_username" id="loginModal_username" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginModal_password" class="form-label">密碼</label>
+                        <input type="password" name="loginModal_password" id="loginModal_password" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="loginModal_ok_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- registerModal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header text-bg-success">
+                    <h1 class="modal-title fs-5 fw-900 text-white" id="exampleModalLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>會員守則</h3>
+                            <p>歡迎加入我們的派對主辦平台！為確保愉快、安全的體驗，請遵守以下守則：</p>
+                            <h4>1. 資格與註冊</h4>
+                            <ul>
+                                <li>您必須年滿 18 歲。</li>
+                                <li>提供真實、完整且準確的個人資料。</li>
+                                <li>定期更新資料以保持準確性。</li>
+                            </ul>
+                            <h4>2. 帳號安全</h4>
+                            <ul>
+                                <li>妥善保管帳號及密碼，勿與他人分享。</li>
+                                <li>如發現帳號異常，請立即通知我們。</li>
+                            </ul>
+                            <h4>3. 行為準則</h4>
+                            <ul>
+                                <li>禁止發布或傳送任何非法、騷擾、中傷等內容。</li>
+                            </ul>
+                            <div class="form-check">
+                                <input type="checkbox" name="re_chk" id="re_chk" class="form-check-input is-invalid">
+                                <label for="re_chk" class="form-check-label">同意</label>
+                                <div class="valid-feedback">同意遵守規定</div>
+                                <div class="invalid-feedback">不同意遵守規定</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="re_username" class="form-label">帳號</label>
+                                <input type="text" name="re_username" id="re_username" class="form-control is-invalid"
+                                    placeholder="字數3-8">
+                                <div class="valid-feedback" id="valid-feedback">符合規定</div>
+                                <div class="invalid-feedback" id="invalid-feedback">不符合規定</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="re_password" class="form-label">密碼</label>
+                                <input type="password" name="re_password" id="re_password"
+                                    class="form-control is-invalid" placeholder="字數3-8">
+                                <div class="valid-feedback">符合規定</div>
+                                <div class="invalid-feedback">不符合規定</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="re_re_password" class="form-label">確認密碼</label>
+                                <input type="password" name="re_re_password" id="re_re_password"
+                                    class="form-control is-invalid" placeholder="確認密碼">
+                                <div class="valid-feedback">符合規定</div>
+                                <div class="invalid-feedback">不符合規定</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="re_email" class="form-label">Email</label>
+                                <input type="email" name="re_email" id="re_email" class="form-control is-invalid"
+                                    placeholder="字數3-15">
+                                <div class="valid-feedback">符合規定</div>
+                                <div class="invalid-feedback">不符合規定</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="re_ok_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- *************s01*************************** -->
+    <section id="s01" class="bg-mycolor1100">
+        <div class="container text-end">
+            <a href="#" style="text-decoration: none;" class="me-2">
+                <i class="fa-brands fa-square-facebook text-white "></i>
+            </a>
+            <a href="#" style="text-decoration: none;" class="me-2">
+                <i class="fa-brands fa-square-x-twitter text-white "></i>
+            </a>
+            <a href="#" style="text-decoration: none;">
+                <i class="fa-brands fa-youtube text-white"></i>
+            </a>
+        </div>
+
+    </section>
+
+    <!-- *************s02*************************** -->
+    <section id="s02" class="bg-mycolor1150">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <i class="fa-solid fa-burger text-danger fs-1"></i>
+                    <a class="navbar-brand ms-2" href="#">21世紀風味速食館</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#s05">關於我們</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    會員專區
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item disabled" id="vip01" href="20240718-product.html"
+                                            target="_blank">工作人員區</a></li>
+                                    <li><a class="dropdown-item disabled" id="vip02"
+                                            href="20240820-member-control-panel.html" target="_blank">管理員功能</a></li>
+                                    <li><a class="dropdown-item disabled" id="vip03" href="20240919-product.html">VIP功能</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div>
+                            <span class="h3 text-success fw-900">會員: <span class="h3 text-danger fw-900"
+                                    id="s02_login_username">XXX</span> </span>
+                            <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#loginModal"
+                                id="s02_login_btn">登入</button>
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerModal"
+                                id="s02_register_btn">註冊</button>
+                            <button class="btn btn-primary d-none" id="s02_logout_btn">登出</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <!-- *************s03*************************** -->
+    <section id="s03" class="d-none">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button> -->
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item bg-cover active"
+                    style="background-image: url(image/beef20240621700368.jpg); height: 65vh;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgb(0, 0, 0, 0.5);">
+                        <h1>大口吃牛！辣味雙層四盎司限定登場!</h1>
+                        <h3>厚實多汁牛肉搭配肯瓊辣醬，一口咬下瞬間衝擊味蕾，爽感爆棚超過癮，愛吃牛肉的你一定懂！</h3>
+
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover"
+                    style="background-image: url(image/check20240516090506_0_0c3dca.jpg); height: 65vh;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgb(0, 0, 0, 0.5);">
+                        <h1>【夏季優惠券】超殺優惠只到9/17！</h1>
+                        <h2>大薯、鷄塊、薯餅加$1多1件，消暑飲品買1送1，還有多樣優惠餐組只要$101起！</h2>
+
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover"
+                    style="background-image: url(image/1572594998604.webp); height: 65vh;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgb(0, 0, 0, 0.5);">
+                        <h1>現點現炸好滋味！多汁美味盡在21世紀速食館</h1>
+                        <h2>不同於傳統台式炸雞採偏鹹、預先炸好再回炸等製作流程，21世紀速食館採用台灣新鮮溫體雞肉，透過獨家按摩與裹粉技術，秉持著現點現炸的新鮮原則；搭配頂級耐炸油品及胖老爹獨門醃漬粉、炸粉配方，不但保留雞肉鮮嫩多汁的口感外，還創造了多層次的美式奶香風味。
+                        </h2>
+
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover"
+                    style="background-image: url(image/170184670364900_P27924791.png); height: 65vh;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgb(0, 0, 0, 0.5);">
+                        <h1>頂級耐炸油品</h1>
+                        <h2>21世紀速食館選用台灣在地優良的頂級南僑油品
+                            「液態油炸專用油」以及「固型油炸專用油」其成分皆通過SGS檢驗，油質除了耐炸不易產生油耗味外，更創造出屬於21世紀速食館炸雞的迷人奶香香氣。</h2>
+
+                    </div>
+                </div>
+                <!-- <div class="carousel-item bg-cover" style="background-image: url(image/Futuristic.jpg); height: 65vh;">
+                    <div class="carousel-caption p-3 rounded-2 shadow-lg d-none d-md-block"
+                        style="background-color: rgb(0, 0, 0, 0.5);">
+                        <h5>未來主題派對 (Futuristic Theme Party)</h5>
+                        <p>服裝: 鼓勵賓客穿著未來風格的服裝，如銀色或金屬色的衣物，甚至是科幻角色的服裝。</p>
+                        <p>裝飾: 使用銀色、藍色和LED燈飾來創造未來感，配上科技感十足的裝飾物。</p>
+                        <p>音樂: 播放電子音樂或科幻電影的配樂。</p>
+                        <p>遊戲: 舉辦科技主題的遊戲或VR體驗，甚至可以安排一些科幻電影片段的模擬。</p>
+                        <p>食品: 提供創意未來風格的食品，例如銀色的甜點或用分子料理技術製作的食品。</p>
+                    </div>
+                </div> -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <!-- *************s04*************************** -->
+    <section id="s04" class="bg-mycolor1200 d-none">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-5 bg-cover wow animate__fadeIn" data-wow-duration="1s" data-wow-delay="0s"
+                    data-wow-iteration="1"
+                    style="background-image: url(image/yusuf-evli-2BdIx4M6vnE-unsplash.jpg); height: 600px; background-attachment: fixed; ">
+                </div>
+                <div class="col-md-7 p-5">
+                    <h1 class="text-white">成立於西元1975年 <span class="text-color06">全球第一家</span></h1>
+                    <h2 class="text-white">店面介紹</h2>
+                    <p class="mb-3 mt-1 fw-500 text-white">
+                        21世紀速食館速食店是一家提供新鮮、美味速食的連鎖餐廳。我們的店面現代而舒適，設計以簡約、清新的風格為主，讓顧客在用餐時感受到輕鬆愉快的氛圍。店內擁有寬敞的座位區，並配備了免費Wi-Fi，方便顧客在享受美食的同時進行工作或休閒活動。
+                    </p>
+
+                    <p class="mb-3 mt-1 fw-500 text-white">
+                        我們的菜單包括經典的漢堡、炸雞、薯條及多樣的飲品。我們致力於選用高品質的食材，並嚴格把控每一道餐品的製作過程，以確保每位顧客都能品嚐到最佳的速食美味。</p>
+                    <div class="row mt-5">
+                        <div class="col-3">
+                            <h4 class="text-white">精選套餐</h4>
+                            <h2 class="counter01 text-white">20+ <span class="h4 text-white">/以上</span> </h2>
+                        </div>
+                        <div class="col-3">
+                            <h4 class="text-white">榮獲好評</h4>
+                            <h2 class="counter02 text-white">98 <span class="h4 text-white">/%</span> </h2>
+                        </div>
+                        <div class="col-3">
+                            <h4 class="text-white">全國認證</h4>
+                            <h2 class="counter03 text-white">8 <span class="h4 text-white">/種</span> </h2>
+                        </div>
+                        <div class="col-3">
+                            <h4 class="text-white">全台總分店</h4>
+                            <h2 class="counter04 text-white">21 <span class="h4 text-white">/間</span> </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- *************s05*************************** -->
+
+    <section id="s05" class="d-none" style="background-image: url(image/louis-hansel-8qT_cml7M68-unsplash.jpg); background-size: cover; background-position: center center;
+    background-attachment: fixed;">
+        <div class="container">
+            <div class="row align-items-center ">
+                <div class="s05_1 col-md-4 text-white rounded-4 shadow-lg border border-white text-center">
+                    <p class="h3 fw-800">
+                        在21世紀速食館，我們致力於為您提供快速、美味的速食選擇。我們的菜單融合了經典的速食美味與創新的風味，讓您在忙碌的生活中也能享受每一口美食。我們的用心選材和精緻製作，保證每一道菜品都能帶給您最好的口感和滿足感。
+                    </p>
+                </div>
+                <div class="col-md-8 timeline-section ">
+                    <div class="row mt-3 align-items-center timeline-section-pointer">
+                        <div class="col-md-6">
+                            <div class="box_text text-center s05_1 rounded-4 shadow-lg border border-white">
+                                <div class="h3 text-danger fw-800">關於我們</div>
+                                <p class="h3 text-danger fw-800 mb-3"><small class="text-muted">About Us</small></p>
+                                <ul class="list-unstyled fw-600 text-white">
+                                    <li> 1984年，21世紀速食館帶著美式熱情基因而來，數十個年頭，一點一滴融入台灣在地文化。亙古不變的服務理念、與時俱進的服務精神，以「美食」、「數位」、「服務」的三大升級持續向前邁進！陪伴顧客走過每一段別具滋味的片刻時光，共享每一刻美好瞬間。這樣的滋味，真好！
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="box_img bg-cover box01_roller "
+                                style="background-image: linear-gradient(to top, rgba(243, 116, 179, 0.1), rgba(244, 234, 83, 0.2)),url(image/about-us-button-about-us-text-template-for-website-about-us-icon-flat-style-vector.jpg); height: 350px;">
+                                <div class="roller01">
+                                    <ul class="list-unstyled">
+                                        <li><button class="mt-2 mb-4 btn text-primary"><a href="https://www.facebook.com/?locale=zh_TW"><i
+                                                    class="fa-brands fa-facebook fs-1"></i></a></button></li>
+                                        <li><button class="mb-4 btn"><a href="https://x.com/"><i
+                                                    class="fa-brands fa-twitter fs-1 text-info"></i></a></button></li>
+                                        <li><button class="mb-4 btn"><a href="https://www.youtube.com/?app=desktop&hl=zh-tw"><i
+                                                    class="fa-brands fa-youtube fs-2 text-danger"></i></a></button></li>
+                                        <li><button class="btn btn"><a href="https://line.me/tw/"><i
+                                                    class="fa-brands fa-line fs-1 text-success"></i></a></button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 align-items-center flex-row-reverse timeline-section-pointer">
+                        <div class="col-md-6">
+                            <div class="box_text text-center s05_1 rounded-4 shadow-lg border border-white">
+                                <div class="h3 text-danger fw-800">重要里程</div>
+                                <p class="h3 text-danger fw-800 mb-3"><small class="text-muted">Important
+                                        Mileage</small></p>
+                                <ul class="list-unstyled fw-600 text-white">
+                                    <li>1984年元月28日，世界快速餐飲界知名品牌「21世紀速食館」正式進駐台灣，穩紮穩打地建立品牌根基，以顧客為先的精神，透過美食、數位、服務等面向提供顧客最優質的用餐體驗；每一小步的突破和改變，都是你我一同經歷的重要里程！
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="box_img bg-cover box_roller"
+                                style="background-image: url(image/history-m.jpg); height: 350px;">
+                                <div class="roller">
+                                    <button class="btn btn-warning">查看更多</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 align-items-center timeline-section-pointer">
+                        <div class="col-md-6">
+                            <div class="box_text text-center s05_1 rounded-4 shadow-lg border border-white">
+                                <div class="h3 text-danger fw-800">品牌故事與承諾</div>
+                                <p class="h3 text-danger fw-800 mb-3"><small class="text-muted">Brand story and
+                                        Promise</small>
+                                </p>
+                                <ul class="list-unstyled fw-600 text-white">
+                                    <li>自1984年，21世紀速食館在台灣成立第一家餐廳以來，持續以慇懃款待的精神，用心服務每一位顧客，與您共享別具滋味的片刻時光，我們對台灣這片土地承諾的企業責任從無間斷，我們重視員工、加盟經營者與供應商的合作夥伴關係，賦予信任與授權，展現合作的力量，發揮多元特性、兼容個人及團體的差異性，並引進全球最完善的制度以及最高品質的黃金標準。
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="box_img box_roller bg-cover"
+                                style="background-image: url(image/06-story.jpg); height: 350px;">
+                                <div class="roller">
+                                    <button class="btn btn-warning">查看更多</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 align-items-center flex-row-reverse timeline-section-pointer">
+                        <div class="col-md-6">
+                            <div class="box_text text-center s05_1 rounded-4 shadow-lg border border-white">
+                                <div class="h3 text-danger fw-800">核心價值</div>
+                                <p class="h3 text-danger fw-800 mb-3"><small class="text-muted">Core Value</small></p>
+                                <ul class="list-unstyled fw-600 text-white">
+                                    <li>21世紀速食館以品質、服務、衛生與超值（Quality、Service、Cleanliness、Value）的核心價值廣獲消費者的支持，並長期深耕台灣。1984年1月28日，21世紀速食館在台灣成立第一家餐廳，近年來，台灣麥當勞持續創新服務，推出快速便利的「得來速」、「24小時營業」餐廳「為你現做」等服務。
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="box_img bg-cover box_roller s05_1 "
+                                style="background-image: linear-gradient(to top, rgba(195, 247, 184, 0.1) , rgba(249, 185, 165, 0.1)),url(image/value01.webp); height: 350px;">
+                                <div class="roller">
+                                    <button class="btn btn-warning">查看更多</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- *************s06*************************** -->
+    <section id="s06" class="d-none"
+        style="background-image: url(image/keith-misner-h0Vxgz5tyXA-unsplash.jpg); background-size: cover; background-position: center center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2  text-start mt-4 mb-3 ms-3 wow animate__backInLeft" data-wow-duration="2s" data-wow-delay="0.2s"
+                    style="background-image: url(image/bg_home_link_menu.jpg); background-size: cover; background-position: center center; width: 400px; height: 300px;">
+                    <br><br>
+                    <h3 class="h1 fw-900 mb-3 text-white">全新菜單</h3>
+                    <p class="h1 fw-700 text-white">Menu</p>
+                    <br><br>
+                    <button class="btn btn-outline-dark border border-white text-white badge"
+                        style="width: 100px; height: 50px;"><span class="h5"><a href="image/5575bafc9645d6089e75970534ffa69202407030919015993.jpg" class="text-white" style="text-decoration:none;">查看菜單</a></span></button>
+                </div>
+                <div class="col-md-2  text-start mt-4 mb-3 ms-3 wow animate__backInDown" data-wow-duration="2s" data-wow-delay="0.2s"
+                    style="background-image: url(image/bg_home_link_pizzapick.jpg); background-size: cover; background-position: center center; width: 400px; height: 300px;">
+                    <br><br>
+                    <h3 class="h1 fw-900 mb-3 text-white">線上訂購</h3>
+                    <p class="h1 fw-700 text-white">Subscriber</p>
+                    <br><br>
+                    <button class="btn btn-outline-dark border border-white text-white badge"
+                        style="width: 100px; height: 50px;"><span class="h5"><a href="javascript:window.alert('施工中!');" class="text-white" style="text-decoration:none;">立即訂購</a></span></button>
+                </div>
+                <div class="col-md-2  text-start mt-4 mb-3 ms-3 wow animate__backInRight" data-wow-duration="2s" data-wow-delay="0.2s"
+                    style="background-image: url(image/bg_home_link_coupon.jpg); background-size: cover; background-position: center center; width: 400px; height: 300px;">
+                    <br><br>
+                    <h3 class="h1 fw-900 mb-3 text-white">專屬APP</h3>
+                    <p class="h1 fw-700 text-white">APP</p>
+                    <br><br>
+                    <button class="btn btn-outline-dark border border-white text-white badge"
+                        style="width: 100px; height: 50px;"><span class="h5"><a href="javascript:window.alert('施工中!');" class="text-white" style="text-decoration:none;">立即下載</a></span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- *************s07*************************** -->
+    <section id="s07" class="d-none" style="position: relative;">
+        <div class="row s07_img">
+            <div class="col-md-5 bg-cover wow animate__backInLeft" data-wow-duration="2s" data-wow-delay="0.2s"
+                style="position: absolute; background-image: url(image/menuitem_2253_1_1475031_50990.jpg); top: 0; bottom: 0;">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-md-7 my-5 s07_text wow animate__backInRight" data-wow-duration="2s" data-wow-delay="0.2s">
+                    <h2>~ 最新消息 ~</h2>
+                    <p class="h4 fw-600">21世紀風味速食館最新消息都在這!
+                    </p>
+                    <br>
+                    <button class="btn btn-outline-dark">最新消息</button>
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <h2>~ 優惠情報 ~</h2>
+                            <p class="h4 fw-600">21世紀風味速食館每月都會舉辦活動!，詳情查看更多內容!</p>
+                            <br>
+                            <button class="btn btn-outline-dark">更多內容</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- *************s08*************************** -->
+    <section id="s08" class="d-none">
+        <div class="container-fluid py-4 bg-mycolor1200">
+            <div class="h2 fw-900 text-center text-danger">主要提供服務</div>
+            <div class="row py-4">
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-pizza-slice fa-6x me-4 text-color13"></i>
+                        <div>
+                            <div class="h3 text-white">健康美食</div>
+                            <p class="text-white">
+                                我們致力於提供健康又美味的餐點，精選新鮮食材，確保每一道菜品不僅美味可口，還富含營養。我們的菜單包含多種低脂、低糖、高纖維的選擇，適合所有注重健康飲食的顧客。我們的廚師們用心調配每一份餐點，讓您在享受美食的同時，也能保持健康的生活方式。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-utensils fa-6x me-4 text-color14"></i>
+                        <div>
+                            <div class="h3 text-white">舒適空間</div>
+                            <p class="text-white">
+                                我們為您打造了一個舒適愉悅的用餐環境，無論是親友聚會還是單獨用餐，我們的空間設計都能讓您感受到放鬆與舒適。寬敞明亮的用餐區、溫馨的裝飾和舒適的座椅，都為您提供一個理想的用餐場所。我們的目標是讓每一位顧客都能在這裡享受美好的時光。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-4">
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-baseball-bat-ball fa-6x me-4 text-color15"></i>
+                        <div>
+                            <div class="h3 text-white">兒童娛樂場所</div>
+                            <p class="text-white">
+                                我們特別設計了兒童娛樂區域，讓家庭用餐變得更加輕鬆愉快。這裡有各種適合孩子們的遊戲設施和活動，讓他們在用餐期間可以快樂玩耍。家長們可以安心享受美食，而孩子們則能在安全有趣的環境中盡情遊玩，這樣的安排讓每一個家庭都能享受美好的用餐體驗。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <i class="fa-solid fa-bell-concierge fa-6x me-2 text-color16"></i>
+                        <div>
+                            <div class="h3 text-white">良好服務</div>
+                            <p class="text-white">
+                                我們的服務團隊致力於提供最優質的顧客服務。每一位員工都經過專業培訓，確保能夠以熱情和專業的態度為每位顧客提供周到的服務。我們關注每一個細節，從點餐到上菜，我們都會竭盡全力確保您的用餐體驗既順暢又愉快。我們的目標是讓每一位顧客都感受到賓至如歸的感覺。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- *************s09*************************** -->
+    <section id="s09" class="d-none " style="position: relative;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 s09_text wow animate__backInLeft" data-wow-duration="2s" data-wow-delay="0.2s"">
+                    <br>
+                    <dl class="row">
+                        <dt class="col-sm-3 text-truncate">加入會員</dt>
+                        <dd class="col-sm-9">現在加入會員即可享受各種優惠待遇!</dd>
+
+                        <dt class="col-sm-3">會員專屬紅利</dt>
+                        <dd class="col-sm-9">來本店消費金額每100元，即可獲得一點紅利點數</dd>
+
+                        <dt class="col-sm-3">兌換各種好康商品</dt>
+                        <dd class="col-sm-9">紅利點數可兌換各式金額折價券，各種周邊商品 ! 詳情查看手機專屬APP~</dd>
+
+                        <dt class="col-sm-3">專屬會員活動</dt>
+                        <dd class="col-sm-9">專屬會員可於每季專屬活動中，獲得各式各樣獎品 ! 詳情查看手機專屬APP~</dd>
+
+
+                    </dl>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-end s09_img">
+            <div class="col-md-5 bg-cover wow animate__backInRight" data-wow-duration="2s" data-wow-delay="0.2s"
+                style="position: absolute; background-image: url(image/如何建立會員制度-2.png); top: 0; bottom: 0; background-size: cover; background-position: center center;">
+            </div>
+        </div>
+    </section>
+
+    <!-- *************s10*************************** -->
+    <section id="s10" class="d-none">
+        <div class="container mt-2">
+            <div class="row">
+                <div class="col-md-6">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29120.73149507649!2d120.59817207203038!3d24.168525820960163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693dc61403ad89%3A0x572bcdc8cd733e4c!2zS05KIEJhbGxvb24gU3RvcmUg5rS-5bCN5rCj55CD77yN5Y-w5Lit5Y2X5bGv6ZaA5biC!5e0!3m2!1szh-TW!2stw!4v1723104569424!5m2!1szh-TW!2stw"
+                        width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="" class="form-label">姓名</label>
+                        <input type="text" class="form-control" placeholder="字數3-5">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">電話</label>
+                        <input type="tel" class="form-control" placeholder="手機10碼">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="字數30內">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">人數</label>
+                        <input type="number" class="form-control">
+                    </div>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                葷食
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                素食
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn btn-info w-100 mt-3" id="ok01_btn">確認</button>
+                    <button class="btn btn-secondary w-100 mt-3">取消</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- *************s13 停權帳號警告畫片*************************** -->
+    <section id="s13" class="d-none">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="display-1 fw-900 text-danger text-center">
+                    你的帳號已經被停權了!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- *************s14*************************** -->
+    <section id="s14" class="d-none">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-4 bg-cover s14_img" id="s14_img"></div>
+                <div class="col-md-8 p-3">
+                    <div class="h3 fw-900">各地分店</div>
+                    <div class="my-3">
+                        <select class="form-select form-select-lg" name="where001" id="where001">
+                            <option value="" selected disabled>---分店---</option>
+                            <option value="1">台北分店</option>
+                            <option value="2">新竹分店</option>
+                            <option value="3">台中分店</option>
+                            <option value="4">高雄分店</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- *************s15*************************** -->
+    <section id="s15" class="d-none">
+        <div class="container mt-3">
+            <div class="row gy-3">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body border border-2">
+                            <div class="card-img bg-cover box_roller"
+                                style="background-image: url(image/food01.jpg); height: 35vh;">
+                                <div class="roller">
+                                    <button class="mybtncolor01">更多資訊</button>
+                                </div>
+                            </div>
+                            <div class="card-text">
+                                <div class="h2 fw-900 text-center mt-3">漢堡</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body border border-2">
+                            <div class="card-img bg-cover box_roller"
+                                style="background-image: url(image/food02.avif); height: 35vh;">
+                                <div class="roller">
+                                    <button class="mybtncolor01">更多資訊</button>
+                                </div>
+                            </div>
+                            <div class="card-text">
+                                <div class="h2 fw-900 text-center mt-3">薯條</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body border border-2">
+                            <div class="card-img bg-cover box_roller"
+                                style="background-image: url(image/food03.jpg); height: 35vh;">
+                                <div class="roller">
+                                    <button class="mybtncolor01">更多資訊</button>
+                                </div>
+                            </div>
+                            <div class="card-text">
+                                <div class="h2 fw-900 text-center mt-3">炸機</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body border border-2">
+                            <div class="card-img bg-cover box_roller"
+                                style="background-image: url(image/food04.jpg); height: 35vh;">
+                                <div class="roller">
+                                    <button class="mybtncolor01">更多資訊</button>
+                                </div>
+                            </div>
+                            <div class="card-text">
+                                <div class="h2 fw-900 text-center mt-3">鳳梨海鮮披薩</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-img bg-cover box_roller"
+                                style="background-image: url(image/food05.webp); height: 35vh;">
+                                <div class="roller">
+                                    <button class="mybtncolor01">更多資訊</button>
+                                </div>
+                            </div>
+                            <div class="card-text">
+                                <div class="h2 fw-900 text-center mt-3">洋蔥圈</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body border border-2">
+                            <div class="card-img bg-cover box_roller"
+                                style="background-image: url(image/food06.jpg); height: 35vh;">
+                                <div class="roller">
+                                    <button class="mybtncolor01">更多資訊</button>
+                                </div>
+                            </div>
+                            <div class="card-text">
+                                <div class="h2 fw-900 text-center mt-3">酥炸魷魚</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- *************s16*************************** -->
+    <section id="s16" class="mt-2 d-none">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="card">
+                        <div class="card-body">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- *************s11誠徵*************************** -->
+    <section id="s11" class="d-none">
+        <div class="row mt-4">
+            <div class="col-md-6 bg-cover" style="background-image: url(image/818026545.png);">
+                <div class="row justify-content-start mt-3 ms-2">
+                    <div class="col-7 s11_text">
+                        <small class="text-danger fw-900">加入我們</small>
+                        <div class="h3 fw-900">誠徵工作夥伴</div>
+                        <p class="text-success">你是否正在尋找一份充滿活力和機會的工作？ 加入我們的速食店團隊吧！我們正在徵求熱情、積極的工作夥伴，一同提供顧客最優質的服務。
+                        </p>
+                        <br>
+                        <button class="btn btn-outline-dark mt-3">查看更多</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 bg-cover" style="background-image: url(image/unnamed.png);">
+                <div class="row justify-content-start mt-3 ms-2">
+                    <div class="col-7 s11_text">
+                        <small class="text-danger fw-900">加入我們</small>
+                        <div class="h3 fw-900">誠徵工作夥伴</div>
+                        <p class="text-info">職務介紹: 提供親切的顧客服務</p>
+                        <p class="text-info">操作收銀系統,準備餐點並確保品質,維持店內清潔與整齊</p>
+                        <br>
+                        <button class="btn btn-outline-light">查看更多</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- *************s12頁尾*************************** -->
+    <section id="s12" class="d-none">
+        <div class="footer text-bg-dark h4 text-center py-2 mb-0">
+            21世紀風味素食館 - 版權所有
+        </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/anime.index.js">	</script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        var flag_re_username = false;
+        var flag_re_password = false;
+        var flag_re_re_password = false;
+        var flag_re_email = false;
+        var flag_re_chk = false;
+        var mychart;
+        $(function () {
+            //圖表
+            //取得資料
+            $.ajax({
+                type: "GET",
+                url: "member-chart-level-api.php",
+                dataType: "json",
+                success: showdata_chart,
+                error: function () {
+                    alert("error-member-chart-level-api.php");
+                }
+            });
+
+            const ctx = document.getElementById('myChart'); //$("#myChart")
+
+            mychart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange000'],
+                    datasets: [{
+                        label: '#會員人數',
+                        data: [120, 19, 3, 5, 2, 30],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            //圖表結束
+
+            //動畫
+            new WOW().init();
+            // s04 Counter Up
+            const counterUp = window.counterUp.default
+
+            const callback = entries => {
+                entries.forEach(entry => {
+                    const el = entry.target
+                    if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                        counterUp(el, {
+                            duration: 2000,
+                            delay: 16,
+                        })
+                        el.classList.add('is-visible')
+                    }
+                })
+            }
+
+            const IO = new IntersectionObserver(callback, { threshold: 1 })
+
+            const el01 = document.querySelector('.counter01')
+            IO.observe(el01)
+            const el02 = document.querySelector('.counter02')
+            IO.observe(el02)
+            const el03 = document.querySelector('.counter03')
+            IO.observe(el03)
+            const el04 = document.querySelector('.counter04')
+            IO.observe(el04)
+            //動畫結束
+
+            // s14_img_where001監聽
+            $("#where001").change(function () {
+                if ($(this).val() == 1) {
+                    $("#s14_img").css('background-image', 'url(image/s14-1.jpg)');
+                } else if ($(this).val() == 2) {
+                    $("#s14_img").css('background-image', 'url(image/s14-2.jpg)');
+                } else if ($(this).val() == 3) {
+                    $("#s14_img").css('background-image', 'url(image/s14-3.jpg)');
+                } else {
+                    $("#s14_img").css('background-image', 'url(image/s14-4.png)');
+                }
+            });
+
+            //確認uid是否存在且合法
+            if (getCookie("uid01") != "") {
+                //將uid01傳遞至後端api確認是否合法
+                var dataJSON = {};
+                dataJSON["uid01"] = getCookie("uid01");
+                console.log(JSON.stringify(dataJSON));
+
+                $.ajax({
+                    type: "POST",
+                    url: "member-login-check-uid-api.php",
+                    data: JSON.stringify(dataJSON),
+                    dataType: "json",
+                    success: showdata_check_uid,
+                    error: function () {
+                        alert("error-member-login-check-uid-api.php");
+                    }
+                });
+            } else {
+                alert("尚未登入, 請登入會員來使用附加功能!");
+            }
+
+            //**********************************註冊功能***********************************************
+            //監聽username
+            $("#re_username").bind("input propertychange", function () {
+                if ($(this).val().length > 2 && $(this).val().length < 9) {
+                    //符合規定前端規定
+                    //傳遞至後端API確認帳號是否可以使用
+                    var dataJSON = {};
+                    dataJSON["username"] = $("#re_username").val();
+                    console.log(JSON.stringify(dataJSON));
+                    //傳遞至後端API
+                    $.ajax({
+                        type: "POST",
+                        url: "member-register-checkuni-api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata_checkuni,
+                        error: function () {
+                            alert("error-member-register-checkuni-api.php");
+                        }
+                    });
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_re_username = false;
+                    $("#invalid-feedback").text("不符合規定");
+                }
+            });
+
+            //監聽password
+            $("#re_password").bind("input propertychange", function () {
+                if ($(this).val().length > 2 && $(this).val().length < 9) {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_re_password = true;
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_re_password = false;
+                }
+            });
+
+            //監聽確認密碼
+            $("#re_re_password").bind("input propertychange", function () {
+                if ($(this).val() == $("#re_password").val()) {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_re_re_password = true;
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_re_re_password = false;
+                }
+            });
+
+            //監聽re_email
+            $("#re_email").bind("input propertychange", function () {
+                if ($(this).val().length > 2 && $(this).val().length < 16) {
+                    //符合規定
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_re_email = true;
+                } else {
+                    //不符合規定
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_re_email = false;
+                }
+            });
+
+            //監聽遵守同意條款
+            $("#re_chk").change(function () {
+                if ($(this).is(":checked")) {
+                    //打勾 
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_re_chk = true;
+                } else {
+                    //未打勾
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_re_chk = false;
+                }
+            });
+
+            //註冊按鈕監聽
+            $("#re_ok_btn").click(function () {
+                if (flag_re_username && flag_re_password && flag_re_re_password && flag_re_email && flag_re_chk) {
+                    //傳遞註冊資料至後端API 執行註冊行為
+                    //{"username":"owner01", "password":"123456", "email": "owner@test.com"}
+                    var dataJSON = {};
+                    dataJSON["username"] = $("#re_username").val();
+                    dataJSON["password"] = $("#re_password").val();
+                    dataJSON["email"] = $("#re_email").val();
+                    console.log(JSON.stringify(dataJSON));
+
+                    $.ajax({
+                        type: "POST",
+                        url: "member-register-api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata_register,
+                        error: function () {
+                            alert("error-member-register-api.php");
+                        }
+                    });
+                } else {
+                    Swal.fire("欄位有錯請修正!", "", "error");
+                }
+            });
+            //section地圖旁定位功能
+            $("#ok01_btn").click(function () {
+                Swal.fire({
+                    title: "訂位成功!",
+                    icon: "success",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            });
+
+            $("#loginModal_ok_btn").click(function () {
+                if ($("#loginModal_username").val() != "" && $("loginModal_password").val() != "") {
+                    //傳遞註冊資料至後端API 執行註冊行為
+                    //{"username":"owner01", "password":"123456"}
+                    var dataJSON = {};
+                    dataJSON["username"] = $("#loginModal_username").val();
+                    dataJSON["password"] = $("#loginModal_password").val();
+                    console.log(JSON.stringify(dataJSON));
+
+                    $.ajax({
+                        type: "POST",
+                        url: "member-login-api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata_login,
+                        error: function () {
+                            alert("error-member-login-api.php");
+                        }
+                    });
+
+                } else {
+                    alert("欄位不得空白!");
+                }
+
+            });
+
+            //登出按鈕監聽
+            $("#s02_logout_btn").click(function () {
+                setCookie("uid01", "", 7);
+                location.href = "20240730-spa.html";
+            });
+
+        }); //end fun
+        function showdata_checkuni(data) {
+            console.log(data);
+            if (data.state) {
+                $("#re_username").removeClass("is-invalid");
+                $("#re_username").addClass("is-valid");
+                $("#valid-feedback").text(data.message);
+                flag_re_username = true;
+            } else {
+                $("#re_username").removeClass("is-valid");
+                $("#re_username").addClass("is-invalid");
+                $("#invalid-feedback").text(data.message);
+                flag_re_username = false;
+            }
+        }
+
+        function showdata_register(data) {
+            console.log(data);
+            if (data.state) {
+                Swal.fire("註冊成功!", "", "success").then(() => {
+                    location.href = "20240730-spa.html";
+                });
+            } else {
+                alert(data.message);
+            }
+        }
+
+        function showdata_login(data) {
+            console.log(data);
+            if (data.state) {
+                if (data.data.State == "1") {
+                    Swal.fire({
+                        title: "登入成功!",
+                        icon: "success",
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(() => {
+                        // location.href = "20240730-spa.html";
+                        //loginModal隱藏
+                        $("#loginModal").modal("hide");
+                        //顯示登入帳號
+                        $("#s02_login_username").text(data.data.Username);
+                        //隱藏登入與註冊按鈕
+                        $("#s02_login_btn").addClass("d-none");
+                        $("#s02_register_btn").addClass("d-none");
+                        //顯示登出按鈕
+                        $("#s02_logout_btn").removeClass("d-none");
+
+                        //顯示vip高級功能
+                        $("#vip01").removeClass("disabled");
+                        $("#vip02").removeClass("disabled");
+                        $("#vip03").removeClass("disabled");
+                        $("#s03").removeClass("d-none");
+                        $("#s04").removeClass("d-none");
+                        $("#s05").removeClass("d-none");
+                        $("#s06").removeClass("d-none");
+                        $("#s07").removeClass("d-none");
+                        $("#s08").removeClass("d-none");
+                        $("#s09").removeClass("d-none");
+                        $("#s10").removeClass("d-none");
+                        $("#s11").removeClass("d-none");
+                        $("#s12").removeClass("d-none");
+                        $("#s14").removeClass("d-none");
+                        $("#s15").removeClass("d-none");
+                        $("#s16").removeClass("d-none");
+                    });
+
+                } else {
+                    alert("該帳號已停權");
+                    // location.href = "20240730-spa.html";
+                    //loginModal隱藏
+                    $("#loginModal").modal("hide");
+                    //顯示登入帳號
+                    $("#s02_login_username").text(data.data.Username);
+                    //隱藏登入與註冊按鈕
+                    $("#s02_login_btn").addClass("d-none");
+                    $("#s02_register_btn").addClass("d-none");
+                    //顯示登出按鈕
+                    $("#s02_logout_btn").removeClass("d-none");
+                    //顯示停權警告畫面 s13
+                    $("#s13").removeClass("d-none");
+                }
+
+                // 將uid01寫入cookie
+                setCookie("uid01", data.data.Uid01, 7);
+            } else {
+                alert(data.message);
+            }
+        }
+
+        function showdata_check_uid(data) {
+            console.log(data);
+            if (data.state) {
+                if (data.data.State == 1) {
+                    //顯示登入帳號
+                    $("#s02_login_username").text(data.data.Username);
+                    //隱藏登入與註冊按鈕
+                    $("#s02_login_btn").addClass("d-none");
+                    $("#s02_register_btn").addClass("d-none");
+                    //顯示登出按鈕
+                    $("#s02_logout_btn").removeClass("d-none");
+
+                    //顯示vip高級功能
+                    $("#vip01").removeClass("disabled");
+                    $("#vip02").removeClass("disabled");
+                    $("#vip03").removeClass("disabled");
+                    $("#s03").removeClass("d-none");
+                    $("#s04").removeClass("d-none");
+                    $("#s05").removeClass("d-none");
+                    $("#s06").removeClass("d-none");
+                    $("#s07").removeClass("d-none");
+                    $("#s08").removeClass("d-none");
+                    $("#s09").removeClass("d-none");
+                    $("#s10").removeClass("d-none");
+                    $("#s11").removeClass("d-none");
+                    $("#s12").removeClass("d-none");
+                    $("#s14").removeClass("d-none");
+                    $("#s15").removeClass("d-none");
+                    $("#s16").removeClass("d-none");
+                } else {
+                    alert("該帳號已停權");
+                    // location.href = "20240730-spa.html";
+                    //loginModal隱藏
+                    $("#loginModal").modal("hide");
+                    //顯示登入帳號
+                    $("#s02_login_username").text(data.data.Username);
+                    //隱藏登入與註冊按鈕
+                    $("#s02_login_btn").addClass("d-none");
+                    $("#s02_register_btn").addClass("d-none");
+                    //顯示登出按鈕
+                    $("#s02_logout_btn").removeClass("d-none");
+                    //顯示停權警告畫面 s13
+                    $("#s13").removeClass("d-none");
+                }
+            }
+        }
+        //cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            const timezoneOffset = 8 * 60 * 60 * 1000;
+            d.setTime(d.getTime() + timezoneOffset);
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        //cookie end
+
+        //圖表設定
+        function showdata_chart(data) {
+            console.log(data);
+
+            // //清空圖表
+            mychart.data.labels = [];
+            mychart.data.datasets[0].data = [];
+            data.data.forEach(function (item) {
+                console.log(item.level);
+                console.log(item.level_num);
+                if (item.level == 900) {
+                    mylevel = "管理員"
+                } else if (item.level == 100) {
+                    mylevel = "一般會員"
+                } else if (item.level == 200) {
+                    mylevel = "VIP會員"
+                } else if (item.level == 300) {
+                    mylevel = "工作人員"
+                }
+                mychart.data.labels.push(mylevel);
+                mychart.data.datasets[0].data.push(item.level_num);
+                mychart.update();
+            });
+        }
+        //圖表結束
+    </script>
+</body>
+
+</html>

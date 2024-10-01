@@ -1,0 +1,234 @@
+[
+    {
+        "ID": 1,
+        "ProductName": "大麥克",
+        "Price": 109,
+        "Ingredients": [
+            "大麥克麵包",
+            "1/10牛肉餅",
+            "吉事片",
+            "切絲生菜"
+        ],
+        "Description": "麥當勞永遠的一號餐， 全球狂熱50年， 紐澳100%雙層純牛肉， 淋上大麥克招牌醬料， 加上生菜、吉事、洋蔥、酸黃瓜， 美味層層堆疊，口感樂趣無窮。",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/big-mac_832x822_2:product-header-desktop?wid=829&hei=455&dpr=off"
+    },
+    {
+        "ID": 2,
+        "ProductName": "雙層牛肉吉事堡",
+        "Price": 139,
+        "Ingredients": [
+            "漢堡麵包",
+            "1/10牛肉餅",
+            "吉事片",
+            "酸黃瓜"
+        ],
+        "Description": "紐澳雙層100%優質牛肉， 搭配雙層切達吉事片， 酸黃瓜、洋蔥在裡面， 芥末醬、番茄醬淋上去， 層出不窮的經典滋味， 真的沒在跟你客氣的。",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/double-cheese-burger_832x822:product-header-desktop?wid=829&hei=455&dpr=off"
+    },
+    {
+        "ID": 3,
+        "ProductName": "四盎司牛肉堡",
+        "Price": 169,
+        "Ingredients": [
+            "滿意麵包",
+            "安格斯牛肉餅",
+            "吉事片",
+            "切絲洋蔥"
+        ],
+        "Description": "千呼萬喚重磅回歸！頂級厚實的4盎司安格斯牛肉，搭上香濃巧達吉事片，再由芥末醬、番茄醬與酸黃瓜聯手助攻，通通夾進飽滿蓬鬆的滿意麵包！",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/832x822_%E5%9B%9B%E7%9B%8E%E5%8F%B8%E7%89%9B%E8%82%89%E5%A0%A1-1:product-header-desktop?wid=829&hei=455&dpr=off"
+    },
+    {
+        "ID": 4,
+        "ProductName": "雙層四盎司牛肉堡",
+        "Price": 209,
+        "Ingredients": [
+            "滿意麵包",
+            "安格斯牛肉餅",
+            "吉事片",
+            "切絲洋蔥"
+        ],
+        "Description": "頂級厚實的4盎司安格斯牛肉，夾進撒上芝麻顆粒的滿意麵包裡，搭配經典芥末醬、番茄醬與酸黃瓜，再融合巧達吉事，簡直神來一筆！厚實多汁的口感，一片好滿足，雙層超過癮！​",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/832x822_%E9%9B%99%E5%B1%A4%E5%9B%9B%E7%9B%8E%E5%8F%B8%E7%89%9B%E8%82%89%E5%A0%A1-1:product-header-desktop?wid=829&hei=455&dpr=off"
+    },
+    {
+        "ID": 5,
+        "ProductName": "麥香鷄®",
+        "Price": 119,
+        "Ingredients": [
+            "滿意麵包",
+            "麥香鷄排",
+            "麥香鷄醬",
+            "切絲生菜"
+        ],
+        "Description": "清脆爽口新鮮生菜，外酥內嫩麥香鷄排，淋上特製醬料，通通夾進撒上芝麻顆粒的滿意麵包！熟悉的經典美味， 不只超值，更有品質。",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/mcchicken_832x822:product-header-desktop?wid=829&hei=455&dpr=off"
+    },
+    {
+        "ID": 6,
+        "ProductName": "雙層麥香鷄",
+        "Price": 149,
+        "Ingredients": [
+            "滿意麵包",
+            "麥香鷄排",
+            "麥香鷄醬",
+            "切絲生菜"
+        ],
+        "Description": "兩片麥香鷄排超滿足，經典美味再加倍!酥嫩麥香鷄排搭配新鮮生菜，淋上特製醬料,通通夾進撒上芝麻顆粒的滿意麵包!熟悉經典美味，雙層口感，大大滿足。",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/%E9%9B%99%E5%B1%A4%E9%BA%A5%E9%A6%99%E9%B7%84:product-header-desktop?wid=829&hei=455&dpr=off"
+    },
+    {
+        "ID": 7,
+        "ProductName": "麥克鷄塊®(6塊)",
+        "Price": 79,
+        "Ingredients": [
+            "麥克鷄塊®"
+        ],
+        "Description": "嚴選優質鷄肉， 以鷄胸和鷄腿黃金比例調配，並依照麥當勞全球產品規範，以天然澱粉取代雞肉中做為保水成分的合法食品添加物-磷酸鹽，讓美味更簡單！",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/chicken-mcnuggets-6-pieces_832x822:product-header-desktop?wid=829&hei=455&dpr=off"
+    },
+    {
+        "ID": 8,
+        "ProductName": "麥克鷄塊®(10塊)",
+        "Price": 109,
+        "Ingredients": [
+            "麥克鷄塊®"
+        ],
+        "Description": "對麥克鷄塊愛不釋手嗎？ 一次點10塊更滿足！ 口感外酥內軟， 男女老少都愛吃，這樣的滋味，真好！",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/chicken-mcnuggets-10-pieces_832x822:product-header-desktop?wid=829&hei=453&dpr=off"
+    },
+    {
+        "ID": 9,
+        "ProductName": "原味麥脆鷄腿(2塊)",
+        "Price": 79,
+        "Ingredients": [
+            "原味麥脆鷄腿(棒腿)",
+            "原味麥脆鷄腿(大腿)"
+        ],
+        "Description": "炸雞，就要麥脆鷄。 獨一無二「黃金美味3要點」！ 堅持三道裹粉五道翻滾，表皮酥脆有層次！ 首創先烤後炸工法，高溫鎖住肉汁，給你嫩、脆、爽的好滋味！ 吃過了，你也會這樣說。",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/832x822_%E5%8E%9F%E5%91%B3%E9%BA%A5%E8%84%86%E9%B7%84%E8%85%BF2pc2023:product-header-desktop?wid=829&hei=455&dpr=off"
+    },
+    {
+        "ID": 10,
+        "ProductName": "辣味麥脆鷄腿(2塊)",
+        "Price": 79,
+        "Ingredients": [
+            "辣味麥脆鷄腿(棒腿)",
+            "辣味麥脆鷄腿(大腿)"
+        ],
+        "Description": "炸雞加辣更夠味！獨家「黃金美味3要點」，火辣的凱恩辣椒，搭配秘製炸雞辛香料，香辣夠味,讓人一口接一口，欲罷不能！炸雞，就要麥脆鷄！",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/832x822_%E8%BE%A3%E5%91%B3%E9%BA%A5%E8%84%86%E9%B7%84%E8%85%BF2pc2023:product-header-desktop?wid=829&hei=455&dpr=off"
+    },
+    {
+        "ID": 11,
+        "ProductName": "可口可樂",
+        "Price": 35,
+        "Ingredients": [
+            "可口可樂汽水",
+            "冰塊"
+        ],
+        "Description": "清涼暢快的百年傳奇經典飲料，氣泡口感，買套餐必搭！",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/coke_860x822_22:product-header-desktop?wid=859&hei=470&dpr=off"
+    },
+    {
+        "ID": 12,
+        "ProductName": "雪碧",
+        "Price": 35,
+        "Ingredients": [
+            "雪碧汽水",
+            "冰塊"
+        ],
+        "Description": "清新的口感 再加上淡淡的檸檬香氣， 搭配套餐沁涼解膩、舒爽解渴！",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/832x822_%E9%9B%AA%E7%A2%A72023:product-header-desktop?wid=829&hei=455&dpr=off"
+    },
+    {
+        "ID": 13,
+        "ProductName": "檸檬風味紅茶 (冰)",
+        "Price": 30,
+        "Ingredients": [
+            "檸檬風味紅茶",
+            "冰塊"
+        ],
+        "Description": "以檸檬汁融合經典紅茶，廣受台灣消費者喜愛的檸檬風味紅茶，口味清爽超有Fu！",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/iced-black-tea-lemon-flavor_832x822:product-header-desktop?wid=830&hei=454&dpr=off"
+    },
+    {
+        "ID": 14,
+        "ProductName": "無糖紅茶 (冰)",
+        "Price": 30,
+        "Ingredients": [
+            "紅茶 (熱)",
+            "冰塊"
+        ],
+        "Description": "無糖人的最愛！ 精選印度茶葉，充分釋放紅茶多層次的飽滿香氣及芳醇尾韻！ 順口好喝無負擔！",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/iced-black-tea-sugar-free_832x822:product-header-desktop?wid=830&hei=454&dpr=off"
+    },
+    {
+        "ID": 15,
+        "ProductName": "無糖綠茶 (冰)",
+        "Price": 30,
+        "Ingredients": [
+            "無糖綠茶",
+            "冰塊"
+        ],
+        "Description": "多層次甘甜茶湯，給消費者最像現泡綠茶的口感，百分之百無香料、無糖、無熱量，輕鬆享受無負擔。",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/iced-green-tea-sugar-free_860x822_2:product-header-desktop?wid=859&hei=472&dpr=off"
+    },
+    {
+        "ID": 16,
+        "ProductName": "蘋果派",
+        "Price": 45,
+        "Ingredients": [
+            "蘋果派"
+        ],
+        "Description": "蘋果派外皮酥脆內餡飽滿，濃厚的肉桂香氣，這股交會於味蕾的滋味~誰受得了~ (孕婦不建議食用)",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/apple-pie_832x822:product-header-desktop?wid=829&hei=453&dpr=off"
+    },
+    {
+        "ID": 17,
+        "ProductName": "四季沙拉",
+        "Price": 60,
+        "Ingredients": [
+            "切片生菜",
+            "玉米粒",
+            "葡萄乾",
+            "番茄片"
+        ],
+        "Description": "鮮採生菜的纖綠、香甜玉米的鮮黃、甘甜葡萄乾的艷紫，滿碗繽紛，就像調色盤，令人胃口大開。",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/salad-large_832x822:product-header-desktop?wid=829&hei=455&dpr=off"
+    },
+    {
+        "ID": 18,
+        "ProductName": "蛋捲冰淇淋",
+        "Price": 35,
+        "Ingredients": [
+            "聖代奶漿",
+            "蛋捲杯"
+        ],
+        "Description": "綿密滑順的口感，加上濃郁奶香， 搭配酥脆餅乾杯，就是簡單又經典的完美組合。 每嚐一口，就會想起初次品嚐的開心！",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/ice-cream-cone_832x822:product-header-desktop?wid=829&hei=455&dpr=off"
+    },
+    {
+        "ID": 19,
+        "ProductName": "鷄塊鬆餅大早餐",
+        "Price": 99,
+        "Ingredients": [
+            "鬆餅",
+            "麥克鷄塊C®",
+            "液體蛋",
+            "洋火腿"
+        ],
+        "Description": "每一樣都愛吃，你想先吃麥克鷄塊®？還是先感受鬆餅的柔潤香綿？不如先來口金黃柔嫩的炒蛋吧，暗自打量鹹香柔韌的火腿，太幸福了，怎麼吃都行，滿盤豐盛，享受從早開始。",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/grand-breakfast_832x822:product-header-desktop?wid=829&hei=455&dpr=off"
+    },
+    {
+        "ID": 20,
+        "ProductName": "現烤焙果",
+        "Price": 40,
+        "Ingredients": [
+            "焙果麵包"
+        ],
+        "Description": "外Ｑ內軟焙果，搭配奶香濃郁乳酪抹醬及酸甜草莓果醬，給你雙醬雙享受！",
+        "ImagePath": "https://s7d1.scene7.com/is/image/mcdonalds/plain-bagel_832x822:product-header-desktop?wid=829&hei=455&dpr=off"
+    }
+]
