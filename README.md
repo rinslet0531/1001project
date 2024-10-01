@@ -1,17 +1,17 @@
 <h2>畫面</h2>
 <div>
-  <img src="https://github.com/rinslet0531/project1001/blob/main/image1.png">
+  <img src="https://github.com/rinslet0531/1001project/blob/main/image1.png">
 </div>
 <div>
-  <img src="https://github.com/rinslet0531/project1001/blob/main/image2.png">
+  <img src="https://github.com/rinslet0531/1001project/blob/main/image2.png">
 </div>
 <h2>註冊畫面</h2>
 <div>
-  <img src="https://github.com/rinslet0531/project1001/blob/main/image3.png">
+  <img src="https://github.com/rinslet0531/1001project/blob/main/image3.png">
 </div>
 <h2>後臺會員狀態管理</h2>
 <div>
-  <img src="https://github.com/rinslet0531/project1001/blob/main/image4.png">
+  <img src="https://github.com/rinslet0531/1001project/blob/main/image4.png">
 </div>
 
 <h2>一頁式網站設計</h2>
